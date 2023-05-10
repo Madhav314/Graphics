@@ -12,6 +12,7 @@ int main() {
 	file << "P3\n" << width << ' ' << height << "\n255\n";
 
 	for (int i = height - 1; i >= 0; i--) {
+		std::cerr << "\rScanlines remaining " << i << ' ' << std::flush;
 		for (int j = 0; j < width; j++) {
 			auto r = double(j) / (width - 1);
 			auto g = double(i) / (height - 1);
@@ -24,5 +25,6 @@ int main() {
 			file << ir << ' ' << ig << ' ' << ib << '\n';
 		}
 	}
+	std::cerr << "\nDone.\n";
 	file.close();
 }
