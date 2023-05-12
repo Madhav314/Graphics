@@ -77,6 +77,10 @@ inline vec3 operator*(const vec3 &a, double s) {
 	return vec3(a.x * s, a.y * s, a.z * s);
 }
 
+inline vec3 operator*(double s, const vec3& a) {
+	return vec3(a.x * s, a.y * s, a.z * s);
+}
+
 inline vec3 operator/(vec3 a, double s) {
 	return a * (1 / s);
 }

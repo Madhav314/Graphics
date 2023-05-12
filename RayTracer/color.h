@@ -6,6 +6,6 @@
 
 void write(std::ofstream &file, color pixel) {
 	file << static_cast<int>(225.999 * pixel.X()) << ' '
-		<< static_cast<int>(225.999 * pixel.Y()) << ' '
-		<< static_cast<int>(225.999 * pixel.Z()) << '\n';
+		 << static_cast<int>(225.999 * pixel.Y()) << ' '
+		 << static_cast<int>(225.999 * pixel.Z()) << '\n';
 }
