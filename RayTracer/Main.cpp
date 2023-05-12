@@ -16,12 +16,12 @@ int main() {
 	double viewport_width = viewport_height * aspect_ratio;
 	double focus = 1.0;
 
-	point origin = point(0, 0, 0);
+	point origin = point(0.0, 0.0, 0.0);
 
-	vec3 camera_x = vec3(viewport_width, 0, 0);
-	vec3 camera_y = vec3(0, viewport_width, 0);
+	vec3 camera_x = vec3(viewport_width, 0.0, 0.0);
+	vec3 camera_y = vec3(0, viewport_width, 0.0);
 
-	vec3 position = origin - (camera_x / 2.0) - (camera_y / 2.0) - vec3(0, 0, focus);
+	vec3 position = origin - (camera_x / 2.0) - (camera_y / 2.0) - vec3(0.0, 0.0, focus);
 
 
 	std::ofstream file;
@@ -33,8 +33,8 @@ int main() {
 		std::cerr << "\rScanlines remaining " << i << ' ' << std::flush;
 		for (int j = 0; j < width; j++) {
 
-			auto a = double(j) / (width - 1);
-			auto b = double(i) / (height - 1);
+			double a = double(j) / (width - 1);
+			double b = double(i) / (height - 1);
 
 			ray r(origin, position + (a * camera_x) + (b * camera_y) - origin);
 
