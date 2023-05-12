@@ -48,8 +48,6 @@ class vec3 {
 			return (*this *= 1 / t);
 		}
 
-
-
 		double length() const {
 			return (std::sqrt(x*x * y*y * z*z));
 		}
@@ -60,20 +58,19 @@ class vec3 {
 using color = vec3;
 using point = vec3;
 
-
-inline vec3 operator+(const vec3 &a, const vec3 &b) {
+inline vec3 operator+(const vec3& a, const vec3& b) {
 	return vec3(a.x + b.x, a.y + b.y, a.z + b.z);
 }
 
-inline vec3 operator-(const vec3 &a, const vec3 &b) {
+inline vec3 operator-(const vec3& a, const vec3& b) {
 	return vec3(a.x - b.x, a.y - b.y, a.z - b.z);
 }
 
-inline vec3 operator*(const vec3 &a, const vec3 &b) {
+inline vec3 operator*(const vec3& a, const vec3& b) {
 	return vec3(a.x * b.x, a.y * b.y, a.z * b.z);
 }
 
-inline vec3 operator*(const vec3 &a, double t) {
+inline vec3 operator*(const vec3& a, double t) {
 	return vec3(a.x * t, a.y * t, a.z * t);
 }
 
@@ -85,14 +82,14 @@ inline vec3 operator/(vec3 a, double t) {
 	return (a * (1 / t));
 }
 
-inline double dot(const vec3 &a, const vec3 &b) {
+inline double dot(const vec3& a, const vec3& b) {
 	return (a.x * b.x + a.y * b.y + a.z * b.z);
 }
 
-inline vec3 cross(const vec3 &a, const vec3 &b) {
+inline vec3 cross(const vec3& a, const vec3& b) {
 	return vec3(a.y * b.z - a.z * b.y,
-				a.z * b.x - a.x * b.z,
-				a.x * b.y - a.y * b.x);
+		a.z * b.x - a.x * b.z,
+		a.x * b.y - a.y * b.x);
 }
 
 inline vec3 unit(vec3 v) {
