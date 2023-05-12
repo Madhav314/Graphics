@@ -4,6 +4,8 @@
 #include "color.h"
 #include "ray.h"
 
+
+
 int main() {
 
 	const double aspect_ratio = 16.0 / 9.0;
@@ -31,11 +33,12 @@ int main() {
 		std::cerr << "\rScanlines remaining " << i << ' ' << std::flush;
 		for (int j = 0; j < width; j++) {
 
-			double a = double(j) / (width - 1);
-			double b = double(i) / (height - 1);
-			ray r(origin, position + a * camera_x + b * camera_y - origin);
+			auto a = double(j) / (width - 1);
+			auto b = double(i) / (height - 1);
 
-			color pixel(double(i) / (width - 1), double(i) / (height - 1), 0.25);
+			ray r(origin, position + (a * camera_x) + (b * camera_y) - origin);
+
+			color pixel = ray_color(r);
 
 			write(file, pixel);
 		}

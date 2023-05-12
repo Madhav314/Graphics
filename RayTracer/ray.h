@@ -23,3 +23,4 @@ class ray {
 			return (origin + t * direction);
 		}
 };
+
