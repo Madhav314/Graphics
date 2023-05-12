@@ -34,24 +34,24 @@ class vec3 {
 			x += v.x;
 			y += v.y;
 			z += v.z;
-			return *this;
+			return (*this);
 		}
 
 		vec3& operator*=(const double t) {
 			x *= t;
 			y *= t;
 			z *= t;
-			return *this;
+			return (*this);
 		}
 
 		vec3& operator/=(const double t) {
-			return *this *= 1 / t;
+			return (*this *= 1 / t);
 		}
 
 
 
 		double length() const {
-			return(std::sqrt(x*x * y*y * z*z));
+			return (std::sqrt(x*x * y*y * z*z));
 		}
 
 		
@@ -82,11 +82,11 @@ inline vec3 operator*(double t, const vec3& a) {
 }
 
 inline vec3 operator/(vec3 a, double t) {
-	return a * (1 / t);
+	return (a * (1 / t));
 }
 
 inline double dot(const vec3 &a, const vec3 &b) {
-	return(a.x * b.x + a.y * b.y + a.z * b.z);
+	return (a.x * b.x + a.y * b.y + a.z * b.z);
 }
 
 inline vec3 cross(const vec3 &a, const vec3 &b) {
