@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include "vec3.h"
+#include "color.h"
 
 int main() {
 
@@ -14,15 +16,9 @@ int main() {
 	for (int i = height - 1; i >= 0; i--) {
 		std::cerr << "\rScanlines remaining " << i << ' ' << std::flush;
 		for (int j = 0; j < width; j++) {
-			auto r = double(j) / (width - 1);
-			auto g = double(i) / (height - 1);
-			auto b = 0.25;
+			color pixel(double(i) / (width - 1), double(i) / (height - 1), 0.25);
 
-			int ir = static_cast<int>(225.999 * r);
-			int ig = static_cast<int>(225.999 * g);
-			int ib = static_cast<int>(225.999 * b);
-
-			file << ir << ' ' << ig << ' ' << ib << '\n';
+			write(file, pixel);
 		}
 	}
 	std::cerr << "\nDone.\n";
