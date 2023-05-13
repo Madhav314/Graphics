@@ -20,7 +20,7 @@ class ray {
 		}
 
 		point at(double t) const {
-			return (origin + t * direction);
+			return (origin + (t * direction));
 		}
 };
 

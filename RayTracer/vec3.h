@@ -45,11 +45,11 @@ class vec3 {
 		}
 
 		vec3& operator/=(const double t) {
-			return (*this *= 1 / t);
+			return (*this *= (1 / t));
 		}
 
 		double length() const {
-			return (std::sqrt(x*x * y*y * z*z));
+			return (std::sqrt(x*x + y*y + z*z));
 		}
 
 		
@@ -88,12 +88,12 @@ inline double dot(const vec3& a, const vec3& b) {
 
 inline vec3 cross(const vec3& a, const vec3& b) {
 	return vec3(a.y * b.z - a.z * b.y,
-		a.z * b.x - a.x * b.z,
-		a.x * b.y - a.y * b.x);
+				a.z * b.x - a.x * b.z,
+				a.x * b.y - a.y * b.x);
 }
 
 inline vec3 unit(vec3 v) {
-	return v / v.length();
+	return (v / v.length());
 }
 
 inline vec3 abs(vec3 v) {

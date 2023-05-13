@@ -6,6 +6,7 @@
 
 
 
+
 int main() {
 
 	const double aspect_ratio = 16.0 / 9.0;
