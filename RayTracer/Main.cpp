@@ -7,18 +7,18 @@
 
 int main() {
 
-	const double aspect_ratio = 1;
+	// aspect_ratio = 16 / 9;
 	const int width = 400;
-	const int height = static_cast<int>(width / aspect_ratio);
+	const int height = 400;
 
 	double viewport_height = 2.0;
-	double viewport_width = viewport_height * aspect_ratio;
+	double viewport_width = 2.0;
 	double focus = 1.0;
 
 	point origin = point(0.0, 0.0, 0.0);
 
 	vec3 camera_x = vec3(viewport_width, 0.0, 0.0);
-	vec3 camera_y = vec3(0, viewport_width, 0.0);
+	vec3 camera_y = vec3(0, viewport_height, 0.0);
 
 	vec3 position = origin - (camera_x / 2.0) - (camera_y / 2.0) - vec3(0.0, 0.0, focus);
 
