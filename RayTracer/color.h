@@ -22,8 +22,8 @@ bool sphere_hit(const point &center, double radius, const ray &r){
 }
 
 color ray_color(const ray &r) {
-	if (sphere_hit(point(0, 0, -1), 0.5, r)) {
-		return color(1, 0, 0);
+	if (sphere_hit(point(0.0, 0.0, -1.0), 0.3, r)) {
+		return color(1.0, 0.0, 0.0);
 	}
 
 	vec3 unit_direction = unit(r.Direction());
