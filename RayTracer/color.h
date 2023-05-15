@@ -23,7 +23,7 @@ double sphere_hit(const point &center, double radius, const ray &r){
 		return -1.0;
 	}
 	else {
-		return (-b - std::sqrt(d) / (2 * a));
+		return (( - b - std::sqrt(d)) / (2 * a));
 	}
 }
 
